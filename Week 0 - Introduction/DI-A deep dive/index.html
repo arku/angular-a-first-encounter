@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="Injector">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular- Dependency injection</title>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+  </head>
+  <body>
+    <h1>Dependency Injection in AngularJS</h1>
+    <div ng-controller="BaseController">
+      <input type="text" ng-model="name" ng-blur="upper()">
+      <p> {{name}} </p>
+    </div>
+  </body>
+</html>
