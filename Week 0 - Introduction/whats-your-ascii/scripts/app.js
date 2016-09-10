@@ -5,13 +5,17 @@
   
     .controller('MainController', function($scope){
       $scope.name = "";
+      $scope.value = 0;
       $scope.calculate = function () {
-        $scope.value = 0;
-        for (var idx = 0; idx < $scope.name.length; idx++) {
-          $scope.value += $scope.name.charCodeAt(idx);
-        }
-          
+        $scope.value = computeValue($scope.name);          
       };
       
+      var computeValue = function(name) {
+        var asciiScore = 0;
+        for(var idx = 0; idx < name.length; idx++) {
+          asciiScore += name.charCodeAt(idx);
+        }
+        return asciiScore;
+      }
     });
 }());
