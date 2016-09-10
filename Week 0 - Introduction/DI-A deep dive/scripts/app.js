@@ -1,7 +1,11 @@
 (function(){
+
+  'use strict';
   angular.module('Injector', [])
     .controller('BaseController', controllerFunc);
     
+    controllerFunc.$inject = ['$scope', '$filter', '$injector'];
+
     function controllerFunc($scope, $filter, $injector) {
       $scope.name = "Arun";
       $scope.upper = upper;
