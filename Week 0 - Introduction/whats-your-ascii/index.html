@@ -8,9 +8,12 @@
   </head>
   <body>
     <h1>Know your (ASCII) value</h1>
-    <section>
+    <section ng-controller="MainController">
       <div>
-        {{2+3}}
+        <input type="text" ng-model="name" ng-keyup="calculate()">
+        <p>
+          The ascii value of your {{name}} is {{value}}
+        </p>
       </div>
     </section>
   </body>
