@@ -13,11 +13,12 @@
       $scope.check = function() {
         if ($scope.menu.length === 0) {
           $scope.message = "Please enter data first";
-          $scope.state = "has-error";
+          $scope.state = "error";
         }
         else {
           var itemsCount = count($scope.menu);
           $scope.message = ( itemsCount <= 3) ? "Enjoy!" : "Too much!";
+          $scope.state = "success";
         }
       }
     }

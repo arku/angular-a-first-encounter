@@ -25,7 +25,7 @@
         <div class="row">
           <div class="col-xs-12">
             <form>
-              <div class="input-group {{state}}">
+              <div class="input-group has-{{state}}">
                 <input type="text" autofocus class="form-control menu-input" name="menu" placeholder="What are you planning to eat? Eg: Sushi, Noodles" ng-model="menu"/>
                 <span class="input-group-btn">
                   <button class="btn btn-info submit-btn" ng-click="check();">Check!</button>
@@ -37,7 +37,7 @@
         
         <div class="row">
           <div class="col-xs-12">
-            <div class="message">
+            <div class="message {{state}}">
               {{ message }}
             </div>
           </div>

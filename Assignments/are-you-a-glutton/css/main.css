@@ -54,6 +54,27 @@ form {
   outline: 0;
 }
 
+.submit-btn:active, .submit-btn:focus {
+  outline: 0;
+}
+
+/** Form feedback **/
+.has-error .form-control{
+  border: 2px solid #cf000f;
+}
+
+.has-success .form-control {
+  border: 2px solid #39B54A;
+}
+
+.success {
+  color: #39B54A;
+}
+
+.error {
+  color: #cf000f;
+}
+
 /**  Placeholder styles **/
 *::-webkit-input-placeholder { 
   font-size: 20px;
@@ -77,7 +98,6 @@ form {
   margin-top: 25px;
   letter-spacing: 0.1em;
   font-size: 24px;
-  color: rgba(0,0,0,0.8);
   text-transform: uppercase;
   font-weight: 600;
 }
