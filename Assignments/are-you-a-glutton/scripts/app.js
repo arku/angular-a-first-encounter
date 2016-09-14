@@ -7,16 +7,37 @@
     mainController.$inject = ['$scope'];
 
     function mainController($scope) {
-      $scope.menu = "Chicken, Fish and Ri";
+      $scope.menu = "";
+      $scope.message = "";
       
       $scope.check = function() {
-        console.log(count($scope.menu));
+        if ($scope.menu.length === 0) {
+          $scope.message = "Please enter data first";
+          $scope.state = "has-error";
+        }
+        else {
+          var itemsCount = count($scope.menu);
+          $scope.message = ( itemsCount <= 3) ? "Enjoy!" : "Too much!";
+        }
       }
     }
     
+    /**
+    * Count the user's menu items
+    **/
     var count = function(menu) {
-      // Remove the spaces in the user's menu
-      var items = menu.replace(/\s+/g, '');
-      return (items.length > 0) ? items.split(',').length : 0;
+      console.log(parseInput(menu));
+      return parseInput(menu).split(',').length;
+    }
+    
+    /**
+    * Remove spaces in the string and replace mutiple consecutive commas with a single comma.
+    * Also removes the commas at the end of the string
+    **/
+    var parseInput = function(menu) {
+      // Remove the spaces first and then replace commas. Otherwise, a minor bug occurs for the
+      // test case "Chicken, Fish,  Rice,     ,,,,,"
+      
+      return menu.replace(/\s+/g, '').replace(/,+$/g, '').replace(/,{2,}/g, ',');
     }
 }());

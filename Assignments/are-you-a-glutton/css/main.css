@@ -1,9 +1,3 @@
-body {
-  margin: 20px auto;  
-  padding: 15px;
-  font-family: 'Poiret One', cursive, sans-serif;
-  position: relative;
-}
 html::after {
   content: "";
   position: absolute;
@@ -18,6 +12,13 @@ html::after {
   background-size: cover;
   opacity: 0.3;
   z-index: -1;
+}
+
+body {
+  margin: 20px auto;  
+  padding: 15px;
+  font-family: 'Poiret One', cursive, sans-serif;
+  position: relative;
 }
 
 /** main styles **/
@@ -56,13 +57,27 @@ form {
 /**  Placeholder styles **/
 *::-webkit-input-placeholder { 
   font-size: 20px;
-  color: red;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: pink;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: pink;
 }
 *:-ms-input-placeholder { 
   font-size: 20px;
-  color: red;
 }
 *::placeholder {
   font-size: 20px;
-  color: red;
+}
+
+/** Message styles **/
+
+.message {
+  margin-top: 25px;
+  letter-spacing: 0.1em;
+  font-size: 24px;
+  color: rgba(0,0,0,0.8);
+  text-transform: uppercase;
+  font-weight: 600;
 }
