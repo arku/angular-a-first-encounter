@@ -1,8 +1,8 @@
 (function() {
   'use strict';
   
-  angular.module('DietAdviserApp', [])
-    .controller('MainController', mainController);
+  angular.module('LunchCheck', [])
+    .controller('LunchCheckController', mainController);
     
     mainController.$inject = ['$scope'];
 
