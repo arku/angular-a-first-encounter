@@ -1,0 +1,68 @@
+body {
+  margin: 20px auto;  
+  padding: 15px;
+  font-family: 'Poiret One', cursive, sans-serif;
+  position: relative;
+}
+html::after {
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background: url('../img/lunch.jpg') no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/** main styles **/
+.heading {
+  font-weight: 900;
+}
+.desc {
+  font-size:20px;
+  margin-top:20px;
+  font-weight: 600;
+}
+.container {
+  position: relative;
+  top:100px;
+}
+
+/** Form styles **/
+form {
+  margin-top: 40px;
+}
+.menu-input {
+  padding: 20px;
+  height: 60px;  
+  font-size: 20px;
+  letter-spacing: 0.05em;
+}
+
+.submit-btn {
+  height: 60px;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  outline: 0;
+}
+
+/**  Placeholder styles **/
+*::-webkit-input-placeholder { 
+  font-size: 20px;
+  color: red;
+}
+*:-ms-input-placeholder { 
+  font-size: 20px;
+  color: red;
+}
+*::placeholder {
+  font-size: 20px;
+  color: red;
+}

@@ -3,11 +3,41 @@
   <head>
     <meta charset="utf-8">
     <title>Are you a glutton?</title>
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
   </head>
   
   <body>
+    <main>
+      <section class="container text-center">
+        
+        <!-- First row -->
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="heading">Think you're eating much?</h1>
+            <p class="desc">Don't worry! Let me know what your menu is and I'll advise you :)</p>
+          </div>
+        </div>
+        
+        <!-- Second row -->
+          
+        <div class="row">
+          <div class="col-xs-12">
+            <form>
+              <div class="input-group">
+                <input type="text" autofocus class="form-control menu-input" name="menu" placeholder="What are you planning to eat? Eg: Sushi, Noodles" />
+                <span class="input-group-btn">
+                  <button class="btn btn-info submit-btn">Check!</button>    
+                </span>
+              </div> <!-- /.input-group -->
+            </form>
+          </div> <!-- /.col-xs-12 -->
+        </div> <!-- ./row -->
+        
+      </section>
+    </main>
+    
   <script src="scripts/angular.min.js"></script>
   <script src="scripts/app.js"></script>
   </body>
