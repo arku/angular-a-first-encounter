@@ -11,7 +11,7 @@
       $scope.message = "";
       
       $scope.check = function() {
-        if ($scope.menu.length === 0) {
+        if ($scope.menu.length === 0 || count($scope.menu) === 0) {
           $scope.message = "Please enter data first";
           $scope.state = "error";
         }
@@ -27,8 +27,9 @@
     * Count the user's menu items
     **/
     var count = function(menu) {
-      console.log(parseInput(menu));
-      return parseInput(menu).split(',').length;
+      var menu = parseInput(menu);
+      // Handling the case of ",,,"
+      return (menu.length > 0) ? parseInput(menu).split(',').length : 0;
     }
     
     /**
