@@ -28,9 +28,10 @@
               <div class="input-group has-{{state}}">
                 <input type="text" autofocus class="form-control menu-input" name="menu" placeholder="What are you planning to eat? Eg: Sushi, Noodles" ng-model="menu"/>
                 <span class="input-group-btn">
-                  <button class="btn btn-info submit-btn" ng-click="check();">Check!</button>
+                  <button class="btn btn-info submit-btn" ng-click="check();">Check If Too Much</button>
                 </span>
               </div> <!-- /.input-group -->
+              <div class="info-text">Note: I do NOT consider an empty item, i.e. , , , as an item towards to the count.</div>
             </form>
           </div> <!-- /.col-xs-12 -->
         </div> <!-- ./row -->
@@ -44,6 +45,10 @@
         </div>
         
       </section>
+
+      <div class="code">
+        <a href="https://github.com/arun1595/angular-a-first-encounter/tree/master/Assignments/are-you-a-glutton" class="btn" title="Source code"><></a>
+      </div>
     </main>
     
   <script src="scripts/angular.min.js"></script>

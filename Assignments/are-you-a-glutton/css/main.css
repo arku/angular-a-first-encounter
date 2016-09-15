@@ -58,6 +58,12 @@ form {
   outline: 0;
 }
 
+.info-text {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+}
+
 /** Form feedback **/
 .has-error .form-control{
   border: 2px solid #cf000f;
@@ -100,4 +106,26 @@ form {
   font-size: 24px;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+/** Source code button **/
+
+.code {
+  position: fixed;
+  bottom: 5%;
+  right: 2%;
+}
+
+.code a {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  color: #fff;
+  outline: none;
+  background: #db4437;
+  border: 0;
+}
+.code a:active, .code a:focus, .code a:hover {
+  color: #fff;
 }
