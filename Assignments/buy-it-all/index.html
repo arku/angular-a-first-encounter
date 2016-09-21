@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ShoppingList">
+<html ng-app="ShoppingListApp">
   <head>
     <meta charset="utf-8">
     <title>Buy it all</title>
@@ -11,9 +11,29 @@
     <div class="container" ng-controller="MainController as mainCtrl">
       <div class="row">
         <div class="col-xs-12">
-          <h1 class="text-uppercase text-center">Buy it all!</h1>
+          <h1 class="text-uppercase text-center title">Buy it all!</h1>
         </div>
-      </div> <!-- /.first-row -->
+      </div> <!-- /.row -->
+      
+      <div class="row lists-container">
+        <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+          <div class="to-buy-list">
+            <h2 class="text-center text-uppercase list-title">To buy</h2>
+            
+            <ul class="">
+              <li ng-repeat="item in mainCtrl.items">
+                {{ item.quantity }} {{ item.name}}
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-xs-6 col-sm-4">
+          <div class="bought-list">
+            <h2 class="text-center text-uppercase list-title">Already bought</h2>  
+          </div>
+        </div>
+      </div> <!-- /.row -->
     </div> <!-- /.container --> 
     
     <script src="scripts/angular.min.js"></script>

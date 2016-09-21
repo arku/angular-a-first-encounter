@@ -14,3 +14,20 @@ html:after{
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+.title {
+  color: #fff;
+}
+
+.lists-container {
+  margin-top: 40px;
+}
+
+.to-buy-list, .bought-list {
+  background: #fff;
+  padding: 15px;
+}
+
+.list-title {
+  font-size: 20px;
+}
