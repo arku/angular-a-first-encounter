@@ -24,8 +24,20 @@ body {
 }
 
 .to-buy-list, .bought-list {
-  background: #fff;
+  background: rgba(0,0,0,0.1);
   padding: 15px;
+  box-shadow: 0 20px 30px 0px rgba(0,0,0,0.1);
+}
+
+.list {
+  margin-top: 30px;
+}
+
+.list-item {
+  padding:10px;
+  margin: 10px;
+  font-size: 16px;
+  background: #fff;
 }
 
 .list-title {

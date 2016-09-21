@@ -16,19 +16,19 @@
       </div> <!-- /.row -->
       
       <div class="row lists-container">
-        <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+        <div class="col-xs-6 col-sm-5 col-sm-offset-1">
           <div class="to-buy-list">
             <h2 class="text-center text-uppercase list-title">To buy</h2>
             
-            <ul class="">
-              <li ng-repeat="item in mainCtrl.items">
+            <ul class="list list-unstyled">
+              <li class="list-item" ng-repeat="item in mainCtrl.items">
                 {{ item.quantity }} {{ item.name}}
               </li>
             </ul>
           </div>
         </div>
         
-        <div class="col-xs-6 col-sm-4">
+        <div class="col-xs-6 col-sm-5">
           <div class="bought-list">
             <h2 class="text-center text-uppercase list-title">Already bought</h2>  
           </div>
