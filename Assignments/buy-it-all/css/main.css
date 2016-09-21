@@ -7,7 +7,7 @@ html:after{
   right:0;
   left:0;
   bottom:0;
-  background: url('../images/food.png') fixed;
+  background: url('../images/food.png');
   z-index: -1;
 }
 
@@ -22,6 +22,8 @@ body {
 .lists-container {
   margin-top: 40px;
 }
+
+/** List styles **/
 
 .to-buy-list, .bought-list {
   background: rgba(0,0,0,0.1);
@@ -42,4 +44,21 @@ body {
 
 .list-title {
   font-size: 20px;
+}
+
+/* Button styles */
+.bought-btn {
+  background: #233;
+  color: #fff;
+  float: right;
+}
+.bought-btn:focus, .bought-btn:active:focus, .bought-btn:active {
+  outline: none;
+}
+.bought-btn:active {
+  box-shadow: none;
+}
+.bought-btn:hover, .bought-btn:focus {
+  background: #ccc;
+  color: #233;
 }

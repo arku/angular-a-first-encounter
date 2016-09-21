@@ -22,7 +22,11 @@
             
             <ul class="list list-unstyled">
               <li class="list-item" ng-repeat="item in mainCtrl.items">
-                {{ item.quantity }} {{ item.name}}
+                <div class="item clearfix">
+                  <span>Buy {{ item.quantity }} {{ item.name}}</span>
+                  <button class="btn bought-btn">
+                  <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Bought</button>
+                </div>
               </li>
             </ul>
           </div>
