@@ -1,0 +1,16 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+
+html:after{
+  content: "";
+  position: absolute;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  background: url('../images/food.png') fixed;
+  z-index: -1;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
