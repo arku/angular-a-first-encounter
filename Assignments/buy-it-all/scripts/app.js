@@ -1,5 +1,5 @@
 (function() {
-  angular.module('ShoppingListApp', [])
+  angular.module('ShoppingListApp', ['ngAnimate'])
     .controller('MainController', MainController)
     .service('ShoppingList', ShoppingListService);
     

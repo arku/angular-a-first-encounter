@@ -40,6 +40,8 @@ body {
   margin: 10px;
   font-size: 16px;
   background: #fff;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .list-title {
@@ -51,6 +53,7 @@ body {
   background: #233;
   color: #fff;
   float: right;
+  transition: all 0.3s ease-out 0.1s;
 }
 .bought-btn:focus, .bought-btn:active:focus, .bought-btn:active {
   outline: none;
@@ -68,4 +71,23 @@ body {
   color: #eee;
   font-size: 16px;
   margin-top: 15px;
+}
+
+/** CSS animations **/
+.list-item.ng-leave {
+  opacity: 0.5;
+}
+
+.list-item.ng-leave-active,
+.list-item.ng-enter {
+  opacity: 0;
+}
+
+.list-item.ng-enter {
+  transform: scale(0.8);
+}
+
+.list-item.ng-enter-active {
+  opacity: 1;
+  transform: scale(1);
 }
