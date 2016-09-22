@@ -7,14 +7,17 @@
     
     function MainController(shoppingList) {
       
-      this.items = shoppingList.getItems();
+      this.items = shoppingList.getItemsToBuy();
+      this.boughtItems = shoppingList.getBoughtItems();
+      
+      this.nothingBought = (this.boughtItems.length == 0);
     };
     
     
     function ShoppingListService() {
       var service = this;
       
-      var items = [
+      var itemsToBuy = [
         {
           name: 'Cookies',
           quantity: 15
@@ -36,11 +39,15 @@
           quantity: 50
         }
       ];
-      console.log(items);
       
-      service.getItems = function() {
-        return items;
-      }
+      var boughtItems = [];
+      service.getItemsToBuy = function() {
+        return itemsToBuy;
+      };
+
+      service.getBoughtItems = function(){
+        return boughtItems;
+      };
     }
     
     

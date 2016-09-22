@@ -62,3 +62,10 @@ body {
   background: #ccc;
   color: #233;
 }
+
+/** Placeholder styles **/
+.placeholder {
+  color: #eee;
+  font-size: 16px;
+  margin-top: 15px;
+}
