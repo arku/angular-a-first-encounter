@@ -20,6 +20,10 @@
           <div class="to-buy-list">
             <h2 class="text-center text-uppercase list-title">To buy</h2>
             
+            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-show="mainCtrl.items.length == 0">
+              Everything is bought!
+            </div>
+
             <ul class="list list-unstyled">
               <li class="list-item" ng-repeat="item in mainCtrl.items">
                 <div class="item clearfix">
