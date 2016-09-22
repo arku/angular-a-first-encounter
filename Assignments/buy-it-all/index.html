@@ -20,7 +20,7 @@
           <div class="to-buy-list">
             <h2 class="text-center text-uppercase list-title">To buy</h2>
             
-            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-show="mainCtrl.items.length == 0">
+            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-show="mainCtrl.itemsCartEmpty()">
               Everything is bought!
             </div>
 
@@ -40,7 +40,7 @@
           <div class="bought-list">
             <h2 class="text-center text-uppercase list-title">Already bought</h2>
 
-            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-show="mainCtrl.boughtItems.length == 0">
+            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-show="mainCtrl.boughtCartEmpty()">
               Nothing bought yet
             </div>
 

@@ -14,6 +14,14 @@
         shoppingList.addToBoughtList(index);
       }
 
+      this.itemsCartEmpty = function() {
+        return this.items.length == 0;
+      }
+
+      this.boughtCartEmpty = function() {
+        return this.boughtItems.length == 0;
+      }
+
     };
     
     
