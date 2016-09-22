@@ -10,7 +10,12 @@
       this.items = shoppingList.getItemsToBuy();
       this.boughtItems = shoppingList.getBoughtItems();
       
-      this.nothingBought = (this.boughtItems.length == 0);
+      this.nothingBought = (this.boughtItems.length === 0);
+
+      this.addToList = function(index) {
+        shoppingList.addToBoughtList(index);
+        this.nothingBought = false;
+      }
     };
     
     
@@ -48,6 +53,14 @@
       service.getBoughtItems = function(){
         return boughtItems;
       };
+
+      service.addToBoughtList = function(index) {
+
+        var removedItem = itemsToBuy.splice(index, 1);
+
+        // splice returns an array of elements  removed
+        boughtItems.unshift(removedItem[0]);
+      }
     }
     
     
