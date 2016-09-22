@@ -9,13 +9,11 @@
       
       this.items = shoppingList.getItemsToBuy();
       this.boughtItems = shoppingList.getBoughtItems();
-      
-      this.nothingBought = (this.boughtItems.length === 0);
 
       this.addToList = function(index) {
         shoppingList.addToBoughtList(index);
-        this.nothingBought = false;
       }
+
     };
     
     

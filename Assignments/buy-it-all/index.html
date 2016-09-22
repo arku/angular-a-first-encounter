@@ -36,11 +36,11 @@
           <div class="bought-list">
             <h2 class="text-center text-uppercase list-title">Already bought</h2>
 
-            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-show="mainCtrl.nothingBought">
+            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-show="mainCtrl.boughtItems.length == 0">
               Nothing bought yet
             </div>
 
-            <ul class="list list-unstyled" ng-if="mainCtrl.boughtItems">
+            <ul class="list list-unstyled">
               <li class="list-item" ng-repeat="item in mainCtrl.boughtItems">
                 <div class="item clearfix">
                   <span>Bought {{ item.quantity }} {{ item.name}}</span>
