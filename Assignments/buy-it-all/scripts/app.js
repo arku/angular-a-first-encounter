@@ -1,14 +1,15 @@
 (function() {
   angular.module('ShoppingListApp', ['ngAnimate'])
-    .controller('MainController', MainController)
+    .controller('BuyingListController', BuyingListController)
+    .controller('BoughtListController', BoughtListController)
     .service('ShoppingList', ShoppingListService);
     
-    MainController.$inject = ['ShoppingList'];
+    BuyingListController.$inject = ['ShoppingList'];
+    BoughtListController.$inject = ['ShoppingList'];
     
-    function MainController(shoppingList) {
+    function BuyingListController(shoppingList) {
       
       this.items = shoppingList.getItemsToBuy();
-      this.boughtItems = shoppingList.getBoughtItems();
 
       this.addToList = function(index) {
         shoppingList.addToBoughtList(index);
@@ -18,11 +19,15 @@
         return this.items.length == 0;
       }
 
+    };
+    
+    function BoughtListController(shoppingList) {
+      this.boughtItems = shoppingList.getBoughtItems();
+      
       this.boughtCartEmpty = function() {
         return this.boughtItems.length == 0;
       }
-
-    };
+    }
     
     
     function ShoppingListService() {

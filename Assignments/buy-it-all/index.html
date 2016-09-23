@@ -9,7 +9,7 @@
   </head>
   
   <body>
-    <div class="container" ng-controller="MainController as mainCtrl">
+    <div class="container">
       <div class="row">
         <div class="col-xs-12">
           <h1 class="text-uppercase text-center title">Buy it all!</h1>
@@ -17,19 +17,19 @@
       </div> <!-- /.row -->
       
       <div class="row lists-container">
-        <div class="col-xs-6 col-sm-5 col-sm-offset-1">
+        <div class="col-xs-6 col-sm-5 col-sm-offset-1" ng-controller="BuyingListController as buyListCtrl">
           <div class="to-buy-list">
             <h2 class="text-center text-uppercase list-title">To buy</h2>
             
-            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-show="mainCtrl.itemsCartEmpty()">
+            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-show="buyListCtrl.itemsCartEmpty()">
               Everything is bought!
             </div>
 
             <ul class="list list-unstyled">
-              <li class="list-item" ng-repeat="item in mainCtrl.items">
+              <li class="list-item" ng-repeat="item in buyListCtrl.items">
                 <div class="item clearfix">
                   <span>Buy {{ item.quantity }} {{ item.name}}</span>
-                  <button class="btn bought-btn" ng-click="mainCtrl.addToList($index)">
+                  <button class="btn bought-btn" ng-click="buyListCtrl.addToList($index)">
                   <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Bought</button>
                 </div>
               </li>
@@ -37,16 +37,16 @@
           </div>
         </div>
         
-        <div class="col-xs-6 col-sm-5">
+        <div class="col-xs-6 col-sm-5" ng-controller="BoughtListController as boughtListCtrl">
           <div class="bought-list">
             <h2 class="text-center text-uppercase list-title">Already bought</h2>
 
-            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-show="mainCtrl.boughtCartEmpty()">
+            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-show="boughtListCtrl.boughtCartEmpty()">
               Nothing bought yet
             </div>
 
             <ul class="list list-unstyled">
-              <li class="list-item" ng-repeat="item in mainCtrl.boughtItems">
+              <li class="list-item" ng-repeat="item in boughtListCtrl.boughtItems">
                 <div class="item clearfix">
                   <span>Bought {{ item.quantity }} {{ item.name}}</span>
                 </div>
