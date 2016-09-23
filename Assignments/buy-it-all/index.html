@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ShoppingListApp">
+<html ng-app="ShoppingListCheckOff">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,11 +17,11 @@
       </div> <!-- /.row -->
       
       <div class="row lists-container">
-        <div class="col-xs-6 col-sm-5 col-sm-offset-1" ng-controller="BuyingListController as buyListCtrl">
+        <div class="col-xs-6 col-sm-6 col-md-5 col-md-offset-1" ng-controller="ToBuyShoppingController as buyListCtrl">
           <div class="to-buy-list">
             <h2 class="text-center text-uppercase list-title">To buy</h2>
             
-            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-show="buyListCtrl.itemsCartEmpty()">
+            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-if="buyListCtrl.itemsCartEmpty()">
               Everything is bought!
             </div>
 
@@ -37,11 +37,11 @@
           </div>
         </div>
         
-        <div class="col-xs-6 col-sm-5" ng-controller="BoughtListController as boughtListCtrl">
+        <div class="col-xs-6 col-sm-6 col-md-5" ng-controller="AlreadyBoughtShoppingController as boughtListCtrl">
           <div class="bought-list">
             <h2 class="text-center text-uppercase list-title">Already bought</h2>
 
-            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-show="boughtListCtrl.boughtCartEmpty()">
+            <div class="col-xs-8 col-xs-offset-2 text-center placeholder" ng-if="boughtListCtrl.boughtCartEmpty()">
               Nothing bought yet
             </div>
 

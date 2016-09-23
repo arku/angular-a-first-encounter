@@ -1,13 +1,13 @@
 (function() {
-  angular.module('ShoppingListApp', ['ngAnimate'])
-    .controller('BuyingListController', BuyingListController)
-    .controller('BoughtListController', BoughtListController)
+  angular.module('ShoppingListCheckOff', ['ngAnimate'])
+    .controller('ToBuyShoppingController', ToBuyShoppingController)
+    .controller('AlreadyBoughtShoppingController', AlreadyBoughtShoppingController)
     .service('ShoppingList', ShoppingListService);
     
-    BuyingListController.$inject = ['ShoppingList'];
-    BoughtListController.$inject = ['ShoppingList'];
+    ToBuyShoppingController.$inject = ['ShoppingList'];
+    AlreadyBoughtShoppingController.$inject = ['ShoppingList'];
     
-    function BuyingListController(shoppingList) {
+    function ToBuyShoppingController(shoppingList) {
       
       this.items = shoppingList.getItemsToBuy();
 
@@ -21,7 +21,7 @@
 
     };
     
-    function BoughtListController(shoppingList) {
+    function AlreadyBoughtShoppingController(shoppingList) {
       this.boughtItems = shoppingList.getBoughtItems();
       
       this.boughtCartEmpty = function() {
