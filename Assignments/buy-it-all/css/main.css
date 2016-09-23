@@ -100,3 +100,20 @@ body {
   width: 50px;
 
 }
+
+/** Media queries for xxs devices **/
+
+@media screen and (max-width: 500px) {
+  .col-xxs-12 {
+    float: left;
+    width: 100%;
+  }
+
+  .to-buy-list {
+    margin-bottom: 40px;
+  }
+
+  #source {
+    display: none;
+  }
+}
