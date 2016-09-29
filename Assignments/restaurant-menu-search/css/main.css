@@ -1,0 +1,12 @@
+@font-face {
+  src: url('../fonts/ProximaNovaRegular.otf');
+  font-family: 'Proxima Nova';
+}
+
+body {
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+.title {
+  text-transform: uppercase;
+}
