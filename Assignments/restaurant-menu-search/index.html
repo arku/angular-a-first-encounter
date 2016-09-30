@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="RestaurantMenuSearch">
+
   <head>
     <meta charset="utf-8">
     <title>Restaurant Menu Search</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/main.css"/>
   </head>
+
   <body ng-controller="MainController as mainCtrl">
     <div class="container">
       <div class="row">
@@ -13,6 +15,15 @@
           <h1 class="title text-center">Find a dish</h1>
         </div>
       </div>
+
+      <div class="row search">
+        <div class="col-xs-12">
+          <input type="text" id="search-box"
+          ng-model="mainCtrl.searchDesc" placeholder="What are you looking for"/>
+          <button class="btn" id="search-btn" ng-click="mainCtrl.searchMenu()">Narrow It Down For Me!</button>
+        </div>
+      </div>
+
     </div>
 
 

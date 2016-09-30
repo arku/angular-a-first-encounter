@@ -1,12 +1,38 @@
 @font-face {
-  src: url('../fonts/ProximaNovaRegular.otf');
   font-family: 'Proxima Nova';
+  src: url('../fonts/ProximaNovaRegular.otf');
 }
-
 body {
+  background-image: url('../images/restaurant.png');
+  background-attachment: fixed;
   font-family: 'Proxima Nova', sans-serif;
+  height: 100%;
+  width: 100%;
 }
-
 .title {
+  color: #fff;
   text-transform: uppercase;
+}
+.search {
+  position: relative;
+  top: 60px;
+}
+#search-box { /* TODO: Make it responsive below width 992px */
+  display: inline-block;
+  font-size: 20px;
+  height: 50px;
+  outline: none;
+  padding: 15px;
+  position: relative;
+  width: 80%;
+}
+#search-btn {
+  background: #489f9b;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 1.2em;
+  height: 50px;
+  position: relative;
+  top: -3px;
+  outline: none;
 }
