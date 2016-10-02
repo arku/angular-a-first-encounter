@@ -2,15 +2,31 @@
   'use strict';
 
   angular.module('RestaurantMenuSearch', [])
-    .controller('MainController', MainController);
+    .controller('MainController', MainController)
+    .service('SearchService', SearchService);
 
-  function MainController() {
+  MainController.$inject = ['SearchService'];
+  function MainController(SearchService) {
     var ctrl = this;
 
     ctrl.searchDesc = "";
-    ctrl.searchMenu = function() {
-      // TODO: Fetch data from the server
+    ctrl.searchMenu = function(searchDesc) {
+      var promise = SearchService.searchMenu();
+      promise.then(function(response) {
+        ctrl.items = response.data.menu_items;
+      });
     }
+  }
+
+  SearchService.$inject = ['$http'];
+  function SearchService($http) {
+    var service = this;
+
+    this.searchMenu = function() {
+      return $http({
+        url: 'https://davids-restaurant.herokuapp.com/menu_items.json'
+      });
+    };
   }
 
 }());
