@@ -3,36 +3,42 @@
 
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
     <title>Restaurant Menu Search</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/materialize.min.css" />
     <link rel="stylesheet" href="css/main.css"/>
   </head>
 
   <body ng-controller="MainController as mainCtrl">
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <h1 class="title text-center">Find a dish</h1>
+      <div class="row header">
+        <div class="col s12">
+            <h1 class="title">Find a dish</h1>
+            <p class="description blue-text text-lighten-5">
+              Search for foods that your taste buds crave for
+            </p>
         </div>
       </div>
 
-      <div class="row search">
-        <div class="col-xs-12">
+      <div class="row mt-40">
+        <div class="col s12">
           <input type="text" id="search-box"
           ng-model="mainCtrl.searchDesc" placeholder="What are you looking for"/>
-          <button class="btn" id="search-btn" ng-click="mainCtrl.searchMenu()">Narrow It Down For Me!</button>
+          <button class="btn waves-effect waves-light" id="search-btn" ng-click="mainCtrl.searchMenu()">Narrow It Down For Me!</button>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-xs-12">
+      <div class="row mt-40">
+        <div class="col s12">
           <ul class="list-unstyled">
             <li ng-repeat="item in mainCtrl.items">
-              <div class="col-xs-12 col-sm-2 col-md-4 col-lg-3">
-                {{item.name}}
-                <p>
-                  {{item.description}}
-                </p>
+              <div class="clearfix hide-on-med-and-down" ng-if="$index % 4 == 0"></div>
+              <div class="clearfix hide-on-small-only hide-on-large-only" ng-if="$index % 2 == 0"></div>
+              <div class="col s12 m6 l3">
+                <div class="card hoverable">
+                  {{ item.name }}
+                <p> {{ item.description }} </p>
+              </div>
               </div>
             </li>
           </ul>

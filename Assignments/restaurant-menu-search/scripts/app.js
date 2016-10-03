@@ -15,7 +15,7 @@
       promise.then(function(response) {
         ctrl.items = response.data.menu_items;
       });
-    }
+    };
   }
 
   SearchService.$inject = ['$http'];
