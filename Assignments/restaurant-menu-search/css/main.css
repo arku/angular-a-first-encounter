@@ -63,6 +63,20 @@ body {
 .card {
   padding: 10px;
 }
+.card .card-content .card-title {
+  line-height: 32px;
+}
+.card .card-content p {
+  margin-top: 20px;
+}
+.card .card-content p::first-letter {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.card .card-action {
+  text-align: center;
+}
+
 /**  Clearfix **/
 .clearfix:after{
   content: "";
