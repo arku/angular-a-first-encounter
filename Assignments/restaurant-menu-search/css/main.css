@@ -60,21 +60,27 @@ body {
 }
 
 /** Menu card styles **/
-.card {
+.menu-card {
   padding: 10px;
 }
-.card .card-content .card-title {
+.menu-card .card-content .card-title {
   line-height: 32px;
 }
-.card .card-content p {
+.menu-card .card-content p {
   margin-top: 20px;
 }
-.card .card-content p::first-letter {
+.menu-card .card-content p::first-letter {
   text-transform: uppercase;
   font-weight: bold;
 }
-.card .card-action {
+.menu-card .card-action {
   text-align: center;
+}
+.menu-card .short-name {
+  position: absolute;
+  text-align: center;
+  top: 15px;
+  left: -15px;
 }
 
 /**  Clearfix **/
