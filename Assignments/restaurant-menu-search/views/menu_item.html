@@ -1,10 +1,10 @@
 <div class="card hoverable menu-card">
   <div class="card-content">
-    <a class="btn-floating short-name">{{ item.short_name }}</a>
-    <span class="card-title">{{ item.name }}</span>
-    <p> {{ item.description }} </p>
+    <a class="btn-floating short-name">{{ menuItemCtrl.item.short_name }}</a>
+    <span class="card-title">{{ menuItemCtrl.item.name }}</span>
+    <p> {{ menuItemCtrl.item.description }} </p>
   </div>
   <div class="card-action">
-    <button class="btn waves-effect waves-light">Don't want this</button>
+    <button class="btn waves-effect waves-light" ng-click="menuItemCtrl.removeItem(menuItemCtrl.index)">Don't want this</button>
   </div>
 </div>

@@ -4,7 +4,8 @@
   angular.module('RestaurantMenuSearch', [])
     .controller('MainController', MainController)
     .service('SearchService', SearchService)
-    .directive('menuItem', MenuItemDirective);
+    .directive('menuItem', MenuItemDirective)
+    .controller('MenuItemDirectiveController', MenuItemDirectiveController);
 
   MainController.$inject = ['SearchService'];
   function MainController(searchService) {
@@ -41,11 +42,24 @@
       restrict: 'E',
       templateUrl: 'views/menu_item.html',
       scope: {
-        item: '<'
-      }
+        item: '<',
+        index: '<'
+      },
+        controller: MenuItemDirectiveController,
+        bindToController: true,
+        controllerAs: 'menuItemCtrl'
     };
 
     return ddo;
+  }
+
+  MenuItemDirectiveController.$inject = ['SearchService'];
+  function MenuItemDirectiveController(searchService) {
+    var ctrl = this;
+
+    ctrl.removeItem = function(index) {
+      searchService.removeItem(index);
+    }
   }
 
   SearchService.$inject = ['$http'];
@@ -76,6 +90,11 @@
 
       return matchingItems;
     };
+
+    service.removeItem = function(index) {
+      var removed = matchingItems.splice(index, 1);
+      console.log('Removed', removed);
+    }
 
   }
 
