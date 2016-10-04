@@ -82,7 +82,12 @@ body {
   top: 15px;
   left: -15px;
 }
-
+/** error **/
+.error {
+  font-size: 24px;
+  line-height: 32px;
+  color: #fff;
+}
 /**  Clearfix **/
 .clearfix:after{
   content: "";

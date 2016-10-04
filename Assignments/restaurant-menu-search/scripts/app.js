@@ -26,13 +26,31 @@
 
               var menuItems = response.data.menu_items;
               console.log('searching for', searchDesc);
-              ctrl.items = searchService.searchMenu(searchDesc, menuItems);
+              var items = searchService.searchMenu(searchDesc, menuItems);
+
+              // Set an error message if the search returned no results
+              // or if the user didn't enter anything in the search field
+              if(searchDesc.length == 0 || items.length == 0)
+                ctrl.errorMessage = "Nothing found";
+              else {
+                ctrl.items = items;
+                ctrl.errorMessage = '';
+              }
               ctrl.dataFetched = true;
             });
         }
         else {
           console.log('data already fetched');
-          ctrl.items = searchService.searchMenu(searchDesc);
+          var items = searchService.searchMenu(searchDesc);
+          if(searchDesc.length == 0 || items.length == 0) {
+            ctrl.errorMessage = "Nothing found";
+            ctrl.items = []; // clear the previously loaded data
+          }
+          else {
+            ctrl.items = items;
+            ctrl.errorMessage = '';
+          }
+
         }
       };
   }
