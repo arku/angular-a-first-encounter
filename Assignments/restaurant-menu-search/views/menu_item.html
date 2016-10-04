@@ -5,6 +5,6 @@
     <p> {{ menuItemCtrl.item.description }} </p>
   </div>
   <div class="card-action">
-    <button class="btn waves-effect waves-light" ng-click="menuItemCtrl.removeItem(menuItemCtrl.index)">Don't want this</button>
+    <button class="btn waves-effect waves-light" ng-click="menuItemCtrl.onRemove({index: menuItemCtrl.index})">Don't want this</button>
   </div>
 </div>

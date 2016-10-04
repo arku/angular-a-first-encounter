@@ -57,7 +57,7 @@
               <div class="clearfix hide-on-med-and-down" ng-if="$index % 3 == 0"></div>
               <div class="clearfix hide-on-small-only hide-on-large-only" ng-if="$index % 2 == 0"></div>
               <div class="col s12 m6 l4">
-                <menu-item item="item" index="$index"></menu-item>
+                <menu-item item="item" index="$index" on-remove="mainCtrl.removeItem(index)"></menu-item>
               </div>
             </li>
           </ul>

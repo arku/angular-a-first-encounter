@@ -53,6 +53,10 @@
 
         }
       };
+
+      ctrl.removeItem = function(index) {
+        searchService.removeItem(index);
+      }
   }
 
   function MenuItemDirective() {
@@ -61,23 +65,19 @@
       templateUrl: 'views/menu_item.html',
       scope: {
         item: '<',
-        index: '<'
+        index: '<',
+        onRemove: '&'
       },
-        controller: MenuItemDirectiveController,
-        bindToController: true,
-        controllerAs: 'menuItemCtrl'
+      controller: MenuItemDirectiveController,
+      bindToController: true,
+      controllerAs: 'menuItemCtrl'
     };
 
     return ddo;
   }
 
-  MenuItemDirectiveController.$inject = ['SearchService'];
-  function MenuItemDirectiveController(searchService) {
+  function MenuItemDirectiveController() {
     var ctrl = this;
-
-    ctrl.removeItem = function(index) {
-      searchService.removeItem(index);
-    }
   }
 
   SearchService.$inject = ['$http'];
