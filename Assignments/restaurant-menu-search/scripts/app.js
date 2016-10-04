@@ -12,12 +12,17 @@
 
     ctrl.dataFetched = false;
     ctrl.searchDesc = '';
+    ctrl.dataLoading = false; // hide the preloader initially
 
     ctrl.searchMenu = function(searchDesc) {
         if(!ctrl.dataFetched) {
           var promise = searchService.getMenuItems();
+          ctrl.dataLoading = true; // display the preloader
           promise
             .then(function(response) {
+              // hide the preloader
+              ctrl.dataLoading = false;
+
               var menuItems = response.data.menu_items;
               console.log('searching for', searchDesc);
               ctrl.items = searchService.searchMenu(searchDesc, menuItems);
