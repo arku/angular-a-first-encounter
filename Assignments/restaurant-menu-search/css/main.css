@@ -61,9 +61,8 @@ body {
 
 /** Menu card styles **/
 .card {
-  padding: 15px;
+  padding: 10px;
 }
-
 /**  Clearfix **/
 .clearfix:after{
   content: "";

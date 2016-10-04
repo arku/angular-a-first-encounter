@@ -3,14 +3,15 @@
 
   angular.module('RestaurantMenuSearch', [])
     .controller('MainController', MainController)
-    .service('SearchService', SearchService);
+    .service('SearchService', SearchService)
+    .directive('menuItem', MenuItemDirective);
 
   MainController.$inject = ['SearchService'];
   function MainController(searchService) {
     var ctrl = this;
 
     ctrl.dataFetched = false;
-    ctrl.searchDesc = "";
+    ctrl.searchDesc = '';
 
     ctrl.searchMenu = function(searchDesc) {
         if(!ctrl.dataFetched) {
@@ -28,6 +29,18 @@
           ctrl.items = searchService.searchMenu(searchDesc);
         }
       };
+  }
+
+  function MenuItemDirective() {
+    var ddo = {
+      restrict: 'E',
+      templateUrl: 'views/menu_item.html',
+      scope: {
+        item: '<'
+      }
+    };
+
+    return ddo;
   }
 
   SearchService.$inject = ['$http'];
@@ -52,7 +65,7 @@
 
       matchingItems = [];
       menuItems.forEach(function(menuItem){
-        if(menuItem.description.indexOf(searchDesc) >= 0)
+        if(menuItem.description.indexOf(searchDesc.toLowerCase()) >= 0)
           matchingItems.push(menuItem);
       });
 

@@ -32,13 +32,10 @@
         <div class="col s12">
           <ul class="list-unstyled">
             <li ng-repeat="item in mainCtrl.items">
-              <div class="clearfix hide-on-med-and-down" ng-if="$index % 4 == 0"></div>
+              <div class="clearfix hide-on-med-and-down" ng-if="$index % 3 == 0"></div>
               <div class="clearfix hide-on-small-only hide-on-large-only" ng-if="$index % 2 == 0"></div>
-              <div class="col s12 m6 l3">
-                <div class="card hoverable">
-                  {{ item.name }}
-                <p> {{ item.description }} </p>
-              </div>
+              <div class="col s12 m6 l4">
+                <menu-item item="item"></menu-item>
               </div>
             </li>
           </ul>
