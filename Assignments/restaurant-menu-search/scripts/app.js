@@ -37,6 +37,10 @@
                 ctrl.errorMessage = '';
               }
               ctrl.dataFetched = true;
+            })
+            .catch(function() {
+              ctrl.errorMessage = 'Looks like a network problem. Please connect to the network and try reloading the page';
+              ctrl.dataLoading = false;
             });
         }
         else {
