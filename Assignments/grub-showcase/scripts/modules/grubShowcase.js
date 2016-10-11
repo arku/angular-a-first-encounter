@@ -1,6 +1,6 @@
 (function() {
   'use strict';
   
-  angular.module('GrubShowcase', ['ui.router']);
+  angular.module('GrubShowcase', ['ui.router', 'Spinner']);
 
 }())
