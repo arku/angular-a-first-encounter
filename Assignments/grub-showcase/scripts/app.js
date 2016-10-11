@@ -25,6 +25,20 @@
               })
           }]
         }
+      })
+      .state('menuItems', {
+        url: '/category/:categoryCode/items',
+        templateUrl: 'views/menu_items.html',
+        controller: 'MenuItemsController as menuItemsCtrl',
+        resolve: {
+          data: ['RestaurantMenuService', '$stateParams',
+                        function(restaurantMenuService, $stateParams) {
+            return restaurantMenuService.getMenuItems($stateParams.categoryCode)
+              .then(function(response) {
+                return response.data;
+              });
+          }]
+        }
       });
   }
 }())

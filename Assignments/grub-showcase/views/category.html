@@ -1,10 +1,10 @@
-<div class="card hoverable">
+<div class="card category-card hoverable">
   <div class="card-content">
     <span class="card-title">{{ $ctrl.item.name }}</span>
     <a class="btn-floating red short-name">{{ $ctrl.item.short_name }}</a>
   </div>
   
   <div class="card-action center-align">
-    <a class="btn waves-effect waves-light">View menu</a>
+    <a class="btn waves-effect waves-light" ui-sref="menuItems({ categoryCode: $ctrl.item.short_name})">View menu</a>
   </div>
 </div>

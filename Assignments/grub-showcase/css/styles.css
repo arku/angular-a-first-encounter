@@ -1,3 +1,6 @@
+body {
+  background: #f9f9f9;
+}
 .main-title {
   font-weight: 300;
 }
@@ -28,9 +31,12 @@
 }
 .card .card-content .card-title {
   font-size: 20px;
-  font-weight: 400;
   line-height: 32px;
+}
+
+.category-card .card-content .card-title {
   position: relative;
+  font-weight: 400;
   top:15px;
 }
 
@@ -39,4 +45,15 @@
   right: 10px;
   text-align: center;
   top: 5px;
+}
+
+/** Menu template **/
+.menu-item-description {
+  position: relative;
+  top: 15px;
+  padding-bottom:10px;
+}
+
+.menu-item-description:first-letter {
+  text-transform: uppercase;
 }

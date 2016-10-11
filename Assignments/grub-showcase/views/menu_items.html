@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <a ui-sref="home">Home</a>&nbsp;&lt;
+      <a ui-sref="categories">Categories</a>&nbsp;&lt;
+      <span>{{ menuItemsCtrl.categoryName }}</span>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div ng-repeat="item in menuItemsCtrl.menuItems">
+      <div class="clearfix hide-on-med-and-down" ng-if="$index % 3 == 0"></div>
+      <div class="clearfix hide-on-small-only hide-on-large-only" ng-if="$index % 2 ==0"></div>
+      <div class="col s12 m6 l4">
+        <menu-item item="item" category="menuItemsCtrl.categoryName"></menu-item>
+      </div>
+    </div>
+  </div>
+</div>

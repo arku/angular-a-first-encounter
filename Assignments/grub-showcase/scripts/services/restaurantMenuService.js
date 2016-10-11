@@ -14,6 +14,15 @@
         url: ApiBaseUrl + '/categories.json'
       });
     };
+
+    this.getMenuItems = function(categoryCode) {
+      return $http({
+        url: ApiBaseUrl + '/menu_items.json',
+        params: {
+          category: categoryCode
+        }
+      });
+    }
   }
 
 }());
