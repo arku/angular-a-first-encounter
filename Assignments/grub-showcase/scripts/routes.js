@@ -1,8 +1,8 @@
 (function() {
   'use strict';
-  
-  angular.module('GrubShowcase', ['ui.router'])
-  .config(RoutesConfig);
+
+  angular.module('GrubShowcase')
+    .config(RoutesConfig);
 
   RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
   function RoutesConfig($stateProvider, $urlRouterProvider) {
@@ -41,4 +41,4 @@
         }
       });
   }
-}())
+}());
