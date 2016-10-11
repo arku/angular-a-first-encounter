@@ -11,7 +11,6 @@
     var events = [];
 
     categoriesCtrl.categories = categories;
-    console.log(categoriesCtrl.categories);
 
     categoriesCtrl.$onInit = function() {
       var event = $rootScope.$on('$stateChangeStart',

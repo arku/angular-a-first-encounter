@@ -1,12 +1,6 @@
-@font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/Roboto-Regular.ttf');
+.main-title {
+  font-weight: 300;
 }
-
-body {
-  font-family: 'Roboto';
-}
-
 /** Home template **/
 .content::after {
   content: '';
@@ -25,4 +19,24 @@ body {
 .content .description {
   font-size: 2em;
   color: #222;
+}
+
+/** Category template **/
+.sub-heading {
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+.card .card-content .card-title {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  position: relative;
+  top:15px;
+}
+
+.btn-floating.short-name {
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  top: 5px;
 }
