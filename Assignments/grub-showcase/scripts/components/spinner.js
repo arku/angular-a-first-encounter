@@ -7,8 +7,8 @@
       controller: SpinnerController
     });
 
-    SpinnerController.$inject = ['$rootScope'];
-    function SpinnerController($rootScope) {
+    SpinnerController.$inject = ['$rootScope', '$state'];
+    function SpinnerController($rootScope, $state) {
     var spinnerCtrl = this;
 
     spinnerCtrl.showSpinner = false;
@@ -23,6 +23,18 @@
 
       $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams) {
         spinnerCtrl.showSpinner = false;
+        swal({
+          title: 'Oops...',
+          text: 'No internet connection',
+          type: 'error',
+          closeOnConfirm: false,
+          confirmButtonText: 'Go home'
+        },
+          function() {
+            $state.go('home');
+            swal.close();
+          }
+        );
       });
     }
   }
