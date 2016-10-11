@@ -12,6 +12,19 @@
       .state('home', {
         url: '/',
         templateUrl: 'views/home.html'
+      })
+      .state('categories', {
+        url: '/categories',
+        templateUrl: 'views/categories.html',
+        controller: 'CategoriesController as categoriesCtrl',
+        resolve: {
+          categories: ['RestaurantMenuService', function(restaurantMenuService) {
+            return restaurantMenuService.getCategories()
+              .then(function(response) {
+                return response.data;
+              })
+          }]
+        }
       });
   }
 }())
