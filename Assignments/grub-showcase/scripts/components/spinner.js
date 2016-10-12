@@ -10,18 +10,21 @@
     SpinnerController.$inject = ['$rootScope', '$state'];
     function SpinnerController($rootScope, $state) {
     var spinnerCtrl = this;
-
+    var events = [];
     spinnerCtrl.showSpinner = false;
+
     spinnerCtrl.$onInit = function() {
-      $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+      var event = $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
         spinnerCtrl.showSpinner = true;
       });
+      events.push(event);
 
-      $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+      event = $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
         spinnerCtrl.showSpinner = false;
       });
+      events.push(event);
 
-      $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams) {
+      event = $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams) {
         spinnerCtrl.showSpinner = false;
         swal({
           title: 'Oops...',
@@ -36,7 +39,17 @@
           }
         );
       });
-    }
+      events.push(event);
+    };
+
+    spinnerCtrl.$onDestroy = function() {
+      events.forEach(function(event) {
+        event();
+      });
+    };
+
+
+
   }
   
 }());
